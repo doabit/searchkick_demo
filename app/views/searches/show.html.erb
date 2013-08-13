@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @search.query %>
+</p>
+
+<p>
+  <strong>Searched at:</strong>
+  <%= @search.searched_at %>
+</p>
+
+<p>
+  <strong>Converted at:</strong>
+  <%= @search.converted_at %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @search.product_id %>
+</p>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

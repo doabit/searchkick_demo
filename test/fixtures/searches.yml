@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  query: MyString
+  searched_at: 2013-08-09 15:45:11
+  converted_at: 2013-08-09 15:45:11
+  product_id: 1
+
+two:
+  query: MyString
+  searched_at: 2013-08-09 15:45:11
+  converted_at: 2013-08-09 15:45:11
+  product_id: 1
