@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def autocomplete
-    @products = Product.search(params[:term], autocomplete: true).page(params[:page]).per(5)
+    @products = Product.search(params[:term], autocomplete: true)
     render json: @products, callback: params[:callback]
   end
 
