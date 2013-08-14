@@ -4,15 +4,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    if params[:q]
+    if params[:q] && params[:q].present?
       @products = Product.search params[:q], autocomplete: true
     else
       @products = Product.all
     end
   end
 
-  def complete
-    @products = Product.search params[:term], autocomplete: true
+  def autocomplete
+    @products = Product.search(params[:term], autocomplete: true).page(params[:page]).per(5)
+    render json: @products, callback: params[:callback]
   end
 
   # GET /products/1

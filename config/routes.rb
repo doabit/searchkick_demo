@@ -1,7 +1,11 @@
 SearchkickDemo::Application.routes.draw do
   resources :searches
 
-  resources :products
+  resources :products do
+    collection do
+      get 'autocomplete'
+    end
+  end
 
   root to: 'products#index'
 

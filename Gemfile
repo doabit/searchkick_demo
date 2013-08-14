@@ -37,6 +37,8 @@ end
 gem 'quiet_assets'
 gem 'pry-rails'
 
+gem 'jquery-ui-rails'
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
