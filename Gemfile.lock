@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 6471b9343efd35342432f9f2b38a951d16304aff
+  specs:
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
+GIT
   remote: git://github.com/ankane/searchkick.git
   revision: 43484d84245eba19d11ecaed772b0a9f4dade015
   specs:
@@ -48,6 +56,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffaker (1.16.1)
     hashr (0.0.22)
     hike (1.2.3)
     i18n (0.6.5)
@@ -57,13 +66,7 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.0.4)
-      jquery-rails
-      railties (>= 3.1.0)
     json (1.8.0)
-    kaminari (0.14.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -149,10 +152,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  ffaker
   jbuilder (~> 1.2)
   jquery-rails
-  jquery-ui-rails
-  kaminari
+  kaminari!
   pry-rails
   quiet_assets
   rails (= 4.0.0)

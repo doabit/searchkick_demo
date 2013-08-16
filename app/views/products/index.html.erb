@@ -1,6 +1,8 @@
 <h1>Listing products</h1>
-<form name='form' action='/products' method='get' style="width: 300px">
-  <input type='text' name='q' id="complete" style='width: 100px'>
+<form name='form' action='/products' method='get'>
+  <div class='example example-twitter-oss'>
+  <input type='text' name='q' id="complete"  class='typeahead'>
+  </div>
   <!-- <input type='submit' name='Search'> -->
   <button type='submit'>Search</button>
 </form>
@@ -8,7 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
+      <!-- <th>Description</th> -->
       <th>Price</th>
       <th>Sku</th>
       <th></th>
@@ -21,7 +23,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.description %></td>
+        <!-- <td><%= product.description %></td> -->
         <td><%= product.price %></td>
         <td><%= product.sku %></td>
         <td><%= link_to 'Show', product %></td>
@@ -31,7 +33,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @products %>
 <br>
 
 <%= link_to 'New Product', new_product_path %>

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+(1..100).each do |i|
+  Product.create name: Faker::Name.name, price: Random.rand(300), sku: Random.rand(3200), description: Faker::Lorem.paragraph
+end

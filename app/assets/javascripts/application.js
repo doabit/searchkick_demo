@@ -13,24 +13,33 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.ui.autocomplete
-//= require_tree .
+//= require hogan
+//= require typeahead
+//= require_self
 function ready(){
-  $("#complete").autocomplete({
-    source: function(request, resoponse){
-      $.ajax({
-        url: '/products/autocomplete.json',
-        dataType: 'jsonp',
-        data: { term: request.term },
-        success: function(data){
-          var rows = [];
-          for(var i = 0; i < data.length; i++){
-            rows.push(data[i].name);
-          }
-          resoponse(rows);
-        }
-      });
-    }
+  // $("#complete").autocomplete({
+  //   source: function(request, resoponse){
+  //     $.ajax({
+  //       url: '/products/autocomplete.json',
+  //       dataType: 'jsonp',
+  //       data: { term: request.term },
+  //       success: function(data){
+  //         var rows = [];
+  //         for(var i = 0; i < data.length; i++){
+  //           rows.push(data[i].name);
+  //         }
+  //         resoponse(rows);
+  //       }
+  //     });
+  //   }
+  // });
+$('#complete').typeahead({
+     name: 'twitter-oss',
+     remote: '/products/autocomplete.json?term=%QUERY',
+     valueKey: 'name',
+     template: '<p><strong>{{name}}</strong> – {{price}}</p>',
+     engine: Hogan,
+     limit: 10
   });
 }
 $(document).ready(ready)

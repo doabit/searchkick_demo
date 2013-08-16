@@ -5,15 +5,15 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q] && params[:q].present?
-      @products = Product.search params[:q], autocomplete: true
+      @products = Product.search params[:q]
     else
-      @products = Product.all
+      @products = Product.order('created_at DESC')
     end
   end
 
   def autocomplete
-    @products = Product.search(params[:term], autocomplete: true)
-    render json: @products, callback: params[:callback]
+    @products = Product.search params[:term], autocomplete: true
+    render json: @products
   end
 
   # GET /products/1

@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  searchkick conversions: "conversions", autocomplete: ['name']
+  searchkick  autocomplete: ['name'], conversions: "conversions"
   has_many :searches
   def search_data
     # as_json.merge conversions: conversions
