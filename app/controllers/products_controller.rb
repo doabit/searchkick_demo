@@ -5,9 +5,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q] && params[:q].present?
-      @products = Product.search params[:q]
+      @products = Product.search params[:q], page: params[:page], per_page: 5
     else
-      @products = Product.order('created_at DESC')
+      @products = Product.order('created_at DESC').page(params[:page]).per(5)
     end
   end
 
