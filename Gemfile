@@ -39,6 +39,7 @@ gem 'pry-rails'
 
 # gem 'jquery-ui-rails'
 gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'devise'
 # gem 'will_paginate', github: 'mislav/will_paginate'
 group :development do
   gem 'ffaker'

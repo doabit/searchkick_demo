@@ -7,6 +7,7 @@
       <th>Searched at</th>
       <th>Converted at</th>
       <th>Product</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
         <td><%= search.searched_at %></td>
         <td><%= search.converted_at %></td>
         <td><%= search.product_id %></td>
+        <td><%= search.user_id %></td>
         <td><%= link_to 'Show', search %></td>
         <td><%= link_to 'Edit', edit_search_path(search) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
