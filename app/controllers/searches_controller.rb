@@ -61,6 +61,16 @@ class SearchesController < ApplicationController
     end
   end
 
+  def conversion
+    search = current_user.searches.find(params[:id])
+    if !search.converted_at
+      search.converted_at = Time.now
+      search.product_id = params[:product_id]
+      search.save!
+    end
+    render nothing: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_search

@@ -1,5 +1,10 @@
 SearchkickDemo::Application.routes.draw do
-  resources :searches
+  devise_for :users
+  resources :searches do
+    member do
+      post 'conversion'
+    end
+  end
 
   resources :products do
     collection do

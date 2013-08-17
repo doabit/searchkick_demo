@@ -8,9 +8,9 @@ GIT
 
 GIT
   remote: git://github.com/ankane/searchkick.git
-  revision: 43484d84245eba19d11ecaed772b0a9f4dade015
+  revision: a32b9f23a859862b38a123150adad9ffc06089e5
   specs:
-    searchkick (0.2.2)
+    searchkick (0.2.3)
       tire
       tire-contrib
 
@@ -43,7 +43,8 @@ GEM
       tzinfo (~> 0.3.37)
     ansi (1.4.3)
     arel (4.0.0)
-    atomic (1.1.12)
+    atomic (1.1.13)
+    bcrypt-ruby (3.1.1)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.0)
@@ -53,10 +54,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    devise (3.0.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffaker (1.16.1)
+    ffaker (1.18.0)
     hashr (0.0.22)
     hike (1.2.3)
     i18n (0.6.5)
@@ -71,9 +77,10 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.2)
-    mime-types (1.23)
+    mime-types (1.24)
     minitest (4.7.5)
     multi_json (1.7.9)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -146,12 +153,15 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  devise
   ffaker
   jbuilder (~> 1.2)
   jquery-rails

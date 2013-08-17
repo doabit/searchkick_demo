@@ -3,14 +3,12 @@
   <div class='example example-twitter-oss'>
   <input type='text' name='q' id="complete"  class='typeahead'>
   </div>
-  <!-- <input type='submit' name='Search'> -->
   <button type='submit'>Search</button>
 </form>
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <!-- <th>Description</th> -->
       <th>Price</th>
       <th>Sku</th>
       <th></th>
@@ -23,17 +21,28 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <!-- <td><%= product.description %></td> -->
         <td><%= product.price %></td>
         <td><%= product.sku %></td>
-        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Show', product, id: 'show-product', data: { productId: product.id} %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= paginate @products %>
+<%=paginate @products %>
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+<% if params[:q] && params[:q].present? %>
+  <script>
+     var searchId = <%= @search.try(:id) %>;
+     $(function(){
+       $("#show-product").click(function(){
+         var productId = $(this).attr('data-productId');
+         $.post("/searches/" + searchId + "/conversion", {product_id: productId});
+       })
+     })
+  </script>
+<% end %>
