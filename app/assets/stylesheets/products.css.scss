@@ -1,24 +1,9 @@
 /* custom font! */
 /* ------------ */
-
-@font-face {
-  font-family: Prociono;
-  src: url(../font/Prociono-Regular-webfont.ttf);
-}
+@import 'bootstrap';
 
 /* scaffolding */
 /* ----------- */
-
-html {
-  overflow-y: scroll;
-  *overflow-x: hidden;
-}
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
 
 .tt-dropdown-menu,
 .gist {
@@ -41,7 +26,7 @@ html {
 }
 
 p {
-  margin: 0 0 10px 0;
+  margin: 0 0 0 0;
 }
 
 /* site theme */

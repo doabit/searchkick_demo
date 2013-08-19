@@ -1,20 +1,21 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  before_action :authenticate_user!, only: [:search]
   # GET /products
   # GET /products.json
   def index
-    if params[:q] && params[:q].present?
-      @products = Product.search params[:q], page: params[:page], per_page: 5
-      @search = current_user.searches.create!(query: params[:q], searched_at: Time.now)
-    else
-      @products = Product.order('created_at DESC').page(params[:page]).per(5)
-    end
+    @products = Product.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def autocomplete
     @products = Product.search params[:term], autocomplete: true
     render json: @products
+  end
+
+  def search
+    @products = Product.search params[:q], suggest: true, page: params[:page], per_page: 5
+    @search = current_user.searches.create!(query: params[:q], searched_at: Time.now)
+    render 'index'
   end
 
   # GET /products/1

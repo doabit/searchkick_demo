@@ -45,6 +45,13 @@ GEM
     arel (4.0.0)
     atomic (1.1.13)
     bcrypt-ruby (3.1.1)
+    bootstrap-kaminari-views (0.0.2)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
+    bootstrap-sass (2.3.2.1)
+      sass (~> 3.2)
+    bootstrap-sass-extras (0.0.4)
+      rails (>= 3.1.0)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.0)
@@ -160,6 +167,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-kaminari-views
+  bootstrap-sass (~> 2.3.2.1)
+  bootstrap-sass-extras (~> 0.0.4)
   coffee-rails (~> 4.0.0)
   devise
   ffaker

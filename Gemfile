@@ -44,6 +44,10 @@ gem 'devise'
 group :development do
   gem 'ffaker'
 end
+
+gem 'bootstrap-sass', '~> 2.3.2.1'
+gem 'bootstrap-sass-extras', '~> 0.0.4'
+gem 'bootstrap-kaminari-views'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

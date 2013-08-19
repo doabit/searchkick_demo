@@ -12,6 +12,8 @@ SearchkickDemo::Application.routes.draw do
     end
   end
 
+  get '/search' => 'products#search'
+
   root to: 'products#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
