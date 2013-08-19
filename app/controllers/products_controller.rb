@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @similar_products = @product.similar(fields: ["name"])
   end
 
   # GET /products/new

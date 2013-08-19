@@ -14,6 +14,12 @@
   <dd><%= @product.sku %></dd>
 </dl>
 
+<h3>Similar Products</h3>
+<ul>
+  <% @similar_products.each do |product|%>
+    <li><%= link_to product.name, product %></li>
+  <% end %>
+</ul>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               products_path, :class => 'btn'  %>
